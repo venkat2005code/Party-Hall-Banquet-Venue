@@ -1,0 +1,54 @@
+/* Modern Hero Additions */
+.hero-modern {
+  display: flex;
+  align-items: center;
+  min-height: 100vh;
+  padding: 100px 2rem 4rem;
+  gap: 4rem;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.hero-modern-content {
+  flex: 1;
+}
+
+.hero-modern-content h1 {
+  font-size: 4rem;
+  margin-bottom: 1.5rem;
+  color: var(--text-primary);
+}
+
+.hero-modern-content p {
+  font-size: 1.2rem;
+  color: var(--text-secondary);
+  margin-bottom: 2rem;
+  font-weight: 400;
+}
+
+.hero-modern-img-wrapper {
+  flex: 1;
+  position: relative;
+  height: 600px;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: var(--shadow-lg);
+}
+
+.hero-modern-img-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+@media (max-width: 992px) {
+  .hero-modern {
+    flex-direction: column;
+    padding-top: 120px;
+    text-align: center;
+  }
+  .hero-modern-img-wrapper {
+    width: 100%;
+    height: 400px;
+  }
+}

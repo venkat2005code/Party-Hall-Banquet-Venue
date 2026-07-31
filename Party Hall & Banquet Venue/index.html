@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grandeur | Premium Party Hall & Banquet Venue</title>
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/sections.css">
+    <link rel="stylesheet" href="css/footer.css">
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <header>
+        <div class="nav-container">
+            <a href="index.html" class="logo">
+                <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M2 22h20M4 22V10M8 22V10M12 22V10M16 22V10M20 22V10M2 10h20M12 2L2 9h20z"/>
+                </svg>
+                Grandeur
+            </a>
+            
+            <nav class="nav-menu">
+                <div class="nav-item">
+                    <span>Home
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                    </span>
+                    <div class="dropdown-menu">
+                        <a href="index.html" class="dropdown-item">Home 1 - Classic</a>
+                        <a href="home2.html" class="dropdown-item">Home 2 - Modern</a>
+                    </div>
+                </div>
+                <div class="nav-item"><a href="about.html">About</a></div>
+                <div class="nav-item"><a href="services.html">Services</a></div>
+                <div class="nav-item"><a href="gallery.html">Gallery</a></div>
+                <div class="nav-item"><a href="packages.html">Packages</a></div>
+                <div class="nav-item"><a href="contact.html">Contact</a></div>
+                <div class="nav-item">
+                    <span>Dashboards
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                    </span>
+                    <div class="dropdown-menu">
+                        <a href="dashboard.html" class="dropdown-item">User Portal</a>
+                        <a href="admin.html" class="dropdown-item">Admin Dashboard</a>
+                    </div>
+                </div>
+            </nav>
+
+            <div class="header-utils">
+                <button id="dir-toggle" class="toggle-btn" aria-label="Toggle Direction">LTR</button>
+                <button id="theme-toggle" class="btn-icon" aria-label="Toggle Theme">
+                    <!-- Icon handled by JS -->
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- SECTION 1: Hero -->
+    <section class="hero" style="background-image: url('hero.jpg'); background-size: cover; background-position: center; position: relative;">
+        <img src="hero.jpg" class="hero-bg" alt="Grandeur Hero Background" onerror="this.src='../hero.jpg'">
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <span class="badge" style="margin-bottom: 1rem;">Award Winning Venue</span>
+            <h1>Timeless Elegance For Your Perfect Moments</h1>
+            <p>Experience unmatched luxury and bespoke services at Grandeur. The premier destination for weddings, corporate galas, and milestone celebrations.</p>
+            <div class="hero-actions">
+                <button class="btn btn-primary" onclick="location.href='packages.html'">View Packages</button>
+                <button class="btn btn-outline" onclick="location.href='gallery.html'">Explore Gallery</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 2: Our Heritage (Split Layout) -->
+    <section class="content-section section-alt-bg">
+        <div class="split-layout">
+            <div class="split-text">
+                <span class="badge">Our Heritage</span>
+                <h2 style="font-family: var(--font-heading); font-size: 2.5rem; margin: 1rem 0; color: var(--primary-color);">A Legacy of Luxury</h2>
+                <p style="color: var(--text-secondary); margin-bottom: 1.5rem; line-height: 1.8;">Since 1998, Grandeur has been the backdrop to thousands of unforgettable stories. Our historic architecture seamlessly blends with modern amenities to create a truly magical atmosphere.</p>
+                <ul class="feature-list-icon">
+                    <li><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg> Over 25 Years of Excellence</li>
+                    <li><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg> Award-Winning Culinary Team</li>
+                    <li><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg> Exclusive Historic Location</li>
+                </ul>
+                <a href="about.html" class="btn btn-outline" style="margin-top: 1rem;">Read Our Story</a>
+            </div>
+            <div class="split-img-wrapper">
+                <img src="sec.jpg" alt="A Legacy of Luxury" onerror="this.src='../sec.jpg'">
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 3: Premium Services Overview -->
+    <section class="content-section">
+        <div style="text-align: center; margin-bottom: 3rem;">
+            <span class="badge">What We Offer</span>
+            <h2 style="font-family: var(--font-heading); font-size: 2.5rem; margin-top: 1rem; color: var(--text-primary);">Exquisite Services</h2>
+        </div>
+        <div class="cards-grid">
+            <div class="card">
+                <div class="card-icon" style="color: var(--primary-color);">
+                    <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg>
+                </div>
+                <h3 class="card-title">Weddings</h3>
+                <p class="card-desc">From intimate ceremonies to grand receptions, we bring your dream wedding to life with flawless execution.</p>
+                <a href="services.html" style="color: var(--primary-color); font-weight: 600; text-decoration: none;">Discover More →</a>
+            </div>
+            <div class="card">
+                <div class="card-icon" style="color: var(--primary-color);">
+                    <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M8 22L16 22"></path><path d="M12 15L12 22"></path><path d="M12 15C15.866 15 19 11.866 19 8L19 3L5 3L5 8C5 11.866 8.13401 15 12 15Z"></path></svg>
+                </div>
+                <h3 class="card-title">Corporate Galas</h3>
+                <p class="card-desc">Impress your clients and team with our state-of-the-art facilities and premium catering options.</p>
+                <a href="services.html" style="color: var(--primary-color); font-weight: 600; text-decoration: none;">Discover More →</a>
+            </div>
+            <div class="card">
+                <div class="card-icon" style="color: var(--primary-color);">
+                    <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+                </div>
+                <h3 class="card-title">Private Parties</h3>
+                <p class="card-desc">Celebrate birthdays, anniversaries, and milestones in an atmosphere of pure sophistication.</p>
+                <a href="services.html" style="color: var(--primary-color); font-weight: 600; text-decoration: none;">Discover More →</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 4: Featured Halls -->
+    <section class="content-section section-alt-bg">
+        <div style="text-align: center; margin-bottom: 3rem;">
+            <span class="badge">Our Venues</span>
+            <h2 style="font-family: var(--font-heading); font-size: 2.5rem; margin-top: 1rem; color: var(--text-primary);">Distinctive Spaces</h2>
+        </div>
+        <div class="cards-grid">
+            <div class="card" style="padding: 0; overflow: hidden;">
+                <img src="https://images.unsplash.com/photo-1519167758481-83f550bb49b3?q=80&w=800&auto=format&fit=crop" alt="Grand Ballroom" style="width: 100%; height: 200px; object-fit: cover;">
+                <div style="padding: 1.5rem;">
+                    <h3 style="color: var(--primary-color); margin-bottom: 0.5rem;">The Grand Ballroom</h3>
+                    <p style="color: var(--text-secondary); margin-bottom: 1rem;">Capacity: 1000 Guests</p>
+                    <p>Our largest and most opulent space, featuring crystal chandeliers and vaulted ceilings.</p>
+                </div>
+            </div>
+            <div class="card" style="padding: 0; overflow: hidden;">
+                <img src="https://images.unsplash.com/photo-1549488344-1f9b8d2bd1f3?q=80&w=800&auto=format&fit=crop" alt="Crystal Lounge" style="width: 100%; height: 200px; object-fit: cover;">
+                <div style="padding: 1.5rem;">
+                    <h3 style="color: var(--primary-color); margin-bottom: 0.5rem;">Crystal Lounge</h3>
+                    <p style="color: var(--text-secondary); margin-bottom: 1rem;">Capacity: 300 Guests</p>
+                    <p>Perfect for mid-sized corporate events and stylish cocktail receptions.</p>
+                </div>
+            </div>
+            <div class="card" style="padding: 0; overflow: hidden;">
+                <img src="https://images.unsplash.com/photo-1464366400600-7168b8af9bc3?q=80&w=800&auto=format&fit=crop" alt="Intimate Garden" style="width: 100%; height: 200px; object-fit: cover;">
+                <div style="padding: 1.5rem;">
+                    <h3 style="color: var(--primary-color); margin-bottom: 0.5rem;">Intimate Garden</h3>
+                    <p style="color: var(--text-secondary); margin-bottom: 1rem;">Capacity: 150 Guests</p>
+                    <p>An outdoor oasis surrounded by lush flora, ideal for intimate ceremonies.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 5: Client Testimonials -->
+    <section class="content-section">
+        <div style="text-align: center; margin-bottom: 3rem;">
+            <span class="badge">Testimonials</span>
+            <h2 style="font-family: var(--font-heading); font-size: 2.5rem; margin-top: 1rem; color: var(--text-primary);">Words From Our Guests</h2>
+        </div>
+        <div class="testimonials-grid">
+            <div class="testimonial-card">
+                <div class="testimonial-quote-icon">"</div>
+                <p class="testimonial-text">"Our wedding at Grandeur was an absolute dream. The staff was incredibly attentive, the food was exquisite, and the ballroom left our guests speechless."</p>
+                <div class="testimonial-author">
+                    <img src="https://ui-avatars.com/api/?name=Eleanor+Rigby&background=d4af37&color=fff" alt="Client">
+                    <div>
+                        <strong style="color: var(--text-primary);">Eleanor & John</strong>
+                        <div style="font-size: 0.85rem; color: var(--primary-color);">Wedding Event</div>
+                    </div>
+                </div>
+            </div>
+            <div class="testimonial-card">
+                <div class="testimonial-quote-icon">"</div>
+                <p class="testimonial-text">"We hosted our annual corporate gala here and it was a resounding success. The A/V setup was flawless and the catering was Michelin-star quality."</p>
+                <div class="testimonial-author">
+                    <img src="https://ui-avatars.com/api/?name=Michael+Scott&background=000&color=fff" alt="Client">
+                    <div>
+                        <strong style="color: var(--text-primary);">Michael S.</strong>
+                        <div style="font-size: 0.85rem; color: var(--primary-color);">Corporate Gala</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 6: Call To Action -->
+    <section class="content-section section-alt-bg" style="text-align: center; padding: 6rem 2rem;">
+        <h2 style="font-family: var(--font-heading); font-size: 3rem; color: var(--primary-color); margin-bottom: 1.5rem;">Ready to Begin Planning?</h2>
+        <p style="color: var(--text-secondary); max-width: 600px; margin: 0 auto 2rem; font-size: 1.1rem; line-height: 1.6;">Contact our event specialists today to schedule a private tour and discuss how we can bring your vision to life.</p>
+        <button class="btn btn-primary" onclick="location.href='contact.html'" style="padding: 1rem 3rem; font-size: 1.1rem;">Inquire Now</button>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-brand">
+                <a href="index.html" class="logo">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M2 22h20M4 22V10M8 22V10M12 22V10M16 22V10M20 22V10M2 10h20M12 2L2 9h20z"/>
+                    </svg>
+                    Grandeur
+                </a>
+                <p>Experience unmatched elegance and premium services. Perfect for weddings, corporate galas, and milestone events.</p>
+                <div class="social-icons">
+                    <a href="#" aria-label="Facebook"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg></a>
+                    <a href="#" aria-label="Twitter"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"></path></svg></a>
+                    <a href="#" aria-label="Instagram"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg></a>
+                </div>
+            </div>
+            
+            <div class="footer-links">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="gallery.html">Gallery</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-links">
+                <h3>Legal</h3>
+                <ul>
+                    <li><a href="packages.html">Packages</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="#">Privacy Policy</a></li>
+                    <li><a href="#">Terms & Conditions</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-contact">
+                <h3>Contact Us</h3>
+                <ul>
+                    <li>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+                        123 Luxury Avenue, Beverly Hills, CA
+                    </li>
+                    <li>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+                        +1 (555) 123-4567
+                    </li>
+                    <li>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+                        bookings@grandeur.com
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Grandeur Banquet Venue. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="js/script.js"></script>
+</body>
+</html>

@@ -1,0 +1,331 @@
+/* Dashboard Specific Styles */
+
+/* Layout overrides for single page app */
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 80px; /* Offset for sticky header */
+}
+
+/* Sidebar Toggle State */
+.sidebar {
+  transition: width 0.3s ease, transform 0.3s ease;
+  z-index: 99;
+}
+.sidebar.collapsed {
+  width: 80px;
+}
+.sidebar.collapsed .sidebar-item span:not(.sidebar-icon) {
+  display: none;
+}
+.sidebar-toggle-btn {
+  position: absolute;
+  top: 15px;
+  right: -15px;
+  background: var(--primary-color);
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: var(--shadow-sm);
+  z-index: 100;
+  transition: transform 0.3s ease;
+}
+.sidebar.collapsed .sidebar-toggle-btn {
+  transform: rotate(180deg);
+}
+
+.dashboard-content {
+  transition: margin-left 0.3s ease, margin-right 0.3s ease;
+}
+.sidebar.collapsed ~ .dashboard-content {
+  margin-left: 80px; /* LTR */
+}
+html[dir="rtl"] .sidebar.collapsed ~ .dashboard-content {
+  margin-right: 80px; /* RTL */
+  margin-left: 0;
+}
+
+/* Dashboard Topbar (Sticky inside content) */
+.dash-topbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid var(--border-color);
+  position: sticky;
+  top: 80px;
+  background-color: var(--bg-color);
+  z-index: 90;
+  padding-top: 1rem;
+}
+
+.dash-search input {
+  padding: 0.75rem 1rem;
+  border-radius: 20px;
+  border: 1px solid var(--border-color);
+  background-color: var(--surface-color);
+  color: var(--text-primary);
+  width: 250px;
+  transition: var(--transition-smooth);
+}
+.dash-search input:focus {
+  width: 300px;
+  outline: none;
+  border-color: var(--primary-color);
+}
+
+.dash-actions {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+/* Sections */
+.dash-section {
+  padding: 4rem 0;
+  min-height: 70vh; /* Ensure sections are tall enough for scrolling */
+  border-bottom: 1px solid var(--border-color);
+}
+.dash-section:last-of-type {
+  border-bottom: none;
+}
+
+.section-title {
+  font-family: var(--font-heading);
+  font-size: 2rem;
+  color: var(--text-primary);
+  margin-bottom: 2rem;
+}
+
+/* Grid Cards (Analytics, Availability) */
+.analytics-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.stat-card {
+  background-color: var(--surface-color);
+  padding: 1.5rem;
+  border-radius: 12px;
+  border: 1px solid var(--border-color);
+  box-shadow: var(--shadow-sm);
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  transition: transform 0.3s ease;
+}
+.stat-card:hover {
+  transform: translateY(-5px);
+  border-color: var(--primary-color);
+}
+.stat-value {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--primary-color);
+  font-family: var(--font-heading);
+}
+
+/* Mock Calendar */
+.mock-calendar {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 5px;
+  background: var(--surface-color);
+  padding: 1rem;
+  border-radius: 8px;
+  border: 1px solid var(--border-color);
+}
+.cal-day {
+  aspect-ratio: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 4px;
+  background: var(--bg-color);
+  font-size: 0.9rem;
+  color: var(--text-primary);
+  cursor: pointer;
+}
+.cal-day.booked {
+  background: rgba(220, 38, 38, 0.1);
+  color: #dc2626;
+  text-decoration: line-through;
+}
+.cal-day.available {
+  background: rgba(34, 197, 94, 0.1);
+  color: #16a34a;
+}
+.cal-day.selected {
+  background: var(--primary-color);
+  color: white;
+}
+
+/* Tables */
+.dash-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 1rem;
+  background-color: var(--surface-color);
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+}
+.dash-table th, .dash-table td {
+  padding: 1rem;
+  text-align: left;
+  border-bottom: 1px solid var(--border-color);
+  color: var(--text-primary);
+}
+html[dir="rtl"] .dash-table th, html[dir="rtl"] .dash-table td {
+  text-align: right;
+}
+.dash-table th {
+  background-color: var(--bg-color);
+  font-weight: 600;
+}
+.status-badge {
+  padding: 0.25rem 0.75rem;
+  border-radius: 12px;
+  font-size: 0.85rem;
+  font-weight: 500;
+}
+.status-pending { background: rgba(202, 138, 4, 0.1); color: #ca8a04; }
+.status-confirmed { background: rgba(34, 197, 94, 0.1); color: #16a34a; }
+
+/* Floating Action Button */
+.fab-container {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  z-index: 1000;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 10px;
+}
+html[dir="rtl"] .fab-container {
+  right: auto;
+  left: 30px;
+  align-items: flex-start;
+}
+.fab-main {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background: var(--primary-color);
+  color: white;
+  border: none;
+  font-size: 1.5rem;
+  box-shadow: var(--shadow-lg);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.3s ease;
+}
+.fab-main:hover {
+  transform: scale(1.1) rotate(90deg);
+}
+.fab-menu {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(20px);
+  transition: all 0.3s ease;
+}
+.fab-container:hover .fab-menu {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+.fab-item {
+  background: var(--surface-color);
+  color: var(--text-primary);
+  border: 1px solid var(--border-color);
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  text-decoration: none;
+  font-size: 0.9rem;
+  box-shadow: var(--shadow-sm);
+  white-space: nowrap;
+  transition: background 0.2s;
+}
+.fab-item:hover {
+  background: var(--bg-color);
+  color: var(--primary-color);
+}
+
+/* Dashboard Responsive Breakpoints */
+@media (max-width: 1024px) {
+  .analytics-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .dashboard-layout {
+    flex-direction: column !important;
+  }
+  .sidebar {
+    width: 100% !important;
+    position: relative !important;
+    transform: none !important;
+  }
+  .dashboard-content {
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    padding: 1rem !important;
+  }
+  .analytics-grid {
+    grid-template-columns: 1fr !important;
+  }
+  /* Force side-by-side dashboard section grids into 1 column on mobile only (except mock-calendar) */
+  .dashboard-content section div[style*="grid-template-columns"]:not(.mock-calendar),
+  .dashboard-content section div[style*="flex"] {
+    grid-template-columns: 1fr !important;
+    flex-direction: column !important;
+    gap: 1.25rem !important;
+  }
+  .mock-calendar {
+    display: grid !important;
+    grid-template-columns: repeat(7, 1fr) !important;
+    gap: 3px !important;
+    padding: 0.5rem !important;
+  }
+  .cal-day {
+    font-size: 0.8rem;
+  }
+  .dash-topbar {
+    position: relative;
+    top: 0;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 1rem;
+  }
+}
+
+@media (max-width: 360px) {
+  .stat-value {
+    font-size: 1.85rem;
+  }
+  .stat-card {
+    padding: 1rem;
+  }
+  .mock-calendar {
+    gap: 2px;
+    padding: 0.25rem;
+  }
+  .cal-day {
+    font-size: 0.75rem;
+  }
+}

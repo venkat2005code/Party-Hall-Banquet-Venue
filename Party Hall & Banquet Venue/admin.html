@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-theme="dark">
+<!-- Defaulting admin to dark theme for visual distinction if preferred, but it respects the toggle -->
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard | Grandeur Venue ERP</title>
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/dashboard.css">
+    <style>
+        /* Small admin specific overrides */
+        .admin-brand {
+            color: var(--primary-color);
+            font-weight: 700;
+            letter-spacing: 1px;
+            font-size: 0.9rem;
+            margin-left: 0.5rem;
+            border-left: 2px solid var(--border-color);
+            padding-left: 0.5rem;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="nav-container">
+            <a href="index.html" class="logo">
+                <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M2 22h20M4 22V10M8 22V10M12 22V10M16 22V10M20 22V10M2 10h20M12 2L2 9h20z"/>
+                </svg>
+                Grandeur <span class="admin-brand">ERP ADMIN</span>
+            </a>
+
+
+            <div class="header-utils">
+                <button id="dir-toggle" class="toggle-btn" aria-label="Toggle Direction">LTR</button>
+                <button id="theme-toggle" class="btn-icon" aria-label="Toggle Theme">
+                    <!-- Icon handled by JS -->
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <div class="dashboard-layout">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="sidebar-menu">
+                <a href="#admin-overview" class="sidebar-item active">
+                    <span class="sidebar-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7"></rect><rect x="14" y="3" width="7" height="7"></rect><rect x="14" y="14" width="7" height="7"></rect><rect x="3" y="14" width="7" height="7"></rect></svg></span>
+                    <span>Overview</span>
+                </a>
+                <a href="#manage-halls" class="sidebar-item">
+                    <span class="sidebar-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18"></path><path d="M9 21v-4a2 2 0 0 1 2-2h2a2 2 0 0 1 2 2v4"></path><path d="M7 21v-8a2 2 0 0 1 2-2h6a2 2 0 0 1 2 2v8"></path><path d="M5 21V9a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v12"></path><path d="M12 7V3"></path><path d="M10 5h4"></path></svg></span>
+                    <span>Hall Management</span>
+                </a>
+                <a href="#manage-customers" class="sidebar-item">
+                    <span class="sidebar-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg></span>
+                    <span>Customers & Events</span>
+                </a>
+                <a href="#payments-services" class="sidebar-item">
+                    <span class="sidebar-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path></svg></span>
+                    <span>Payments & Vendors</span>
+                </a>
+                <a href="#reports" class="sidebar-item">
+                    <span class="sidebar-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="20" x2="18" y2="10"></line><line x1="12" y1="20" x2="12" y2="4"></line><line x1="6" y1="20" x2="6" y2="14"></line></svg></span>
+                    <span>Reports & Analytics</span>
+                </a>
+                <a href="#settings" class="sidebar-item">
+                    <span class="sidebar-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"></circle><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"></path></svg></span>
+                    <span>System Settings</span>
+                </a>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="dashboard-content">
+            
+            <!-- Dashboard Topbar (Sticky) -->
+            <div class="dash-topbar">
+                <div class="dash-search">
+                    <input type="text" placeholder="Search bookings, users, invoices...">
+                </div>
+                <!-- Breadcrumbs Mock -->
+                <div style="font-size: 0.9rem; color: var(--text-secondary); margin-right: auto; margin-left: 2rem;">
+                    Admin / <span style="color: var(--primary-color)">Dashboard</span>
+                </div>
+                <div class="dash-actions">
+                    <button class="btn-icon" aria-label="Notifications" style="position: relative;">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path><path d="M13.73 21a2 2 0 0 1-3.46 0"></path></svg>
+                        <span style="position: absolute; top: -5px; right: -5px; background: red; color: white; border-radius: 50%; width: 18px; height: 18px; font-size: 10px; display: flex; align-items: center; justify-content: center;">12</span>
+                    </button>
+                    <div style="display: flex; align-items: center; gap: 0.5rem; font-weight: 500;">
+                        <img src="https://ui-avatars.com/api/?name=Admin+User&background=000&color=fff" alt="Admin Profile" style="width: 36px; height: 36px; border-radius: 50%;">
+                        <span>Admin</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Section 1: Overview -->
+            <section id="admin-overview" class="dash-section" style="padding-top: 0; min-height: auto;">
+                <div class="dashboard-header">
+                    <h1 class="dashboard-title">System Overview</h1>
+                    <p style="color: var(--text-secondary)">Business KPIs for the month of October 2026.</p>
+                </div>
+
+                <div class="analytics-grid">
+                    <div class="stat-card">
+                        <div class="panel-header">
+                            <span class="panel-title">Monthly Revenue</span>
+                            <span class="sidebar-icon" style="color: var(--primary-color)"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"></line><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path></svg></span>
+                        </div>
+                        <div class="stat-value" style="color: #16a34a;">$142,500</div>
+                        <span style="color: var(--text-secondary); font-size: 0.9rem;">+12% from last month</span>
+                    </div>
+                    <div class="stat-card">
+                        <div class="panel-header">
+                            <span class="panel-title">Total Bookings</span>
+                            <span class="sidebar-icon" style="color: var(--primary-color)"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg></span>
+                        </div>
+                        <div class="stat-value">48</div>
+                        <span style="color: var(--text-secondary); font-size: 0.9rem;">12 events this week</span>
+                    </div>
+                    <div class="stat-card">
+                        <div class="panel-header">
+                            <span class="panel-title">Pending Approvals</span>
+                            <span class="sidebar-icon" style="color: var(--primary-color)"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"></path><line x1="12" y1="9" x2="12" y2="13"></line><line x1="12" y1="17" x2="12.01" y2="17"></line></svg></span>
+                        </div>
+                        <div class="stat-value" style="color: #ca8a04;">5</div>
+                        <span style="color: var(--text-secondary); font-size: 0.9rem;">Requires attention</span>
+                    </div>
+                    <div class="stat-card">
+                        <div class="panel-header">
+                            <span class="panel-title">Hall Occupancy</span>
+                            <span class="sidebar-icon" style="color: var(--primary-color)"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18"></path><path d="M9 21v-4a2 2 0 0 1 2-2h2a2 2 0 0 1 2 2v4"></path><path d="M7 21v-8a2 2 0 0 1 2-2h6a2 2 0 0 1 2 2v8"></path><path d="M5 21V9a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v12"></path><path d="M12 7V3"></path><path d="M10 5h4"></path></svg></span>
+                        </div>
+                        <div class="stat-value" style="color: var(--primary-color);">85%</div>
+                        <span style="color: var(--text-secondary); font-size: 0.9rem;">High utilization rate</span>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Section 2: Hall & Booking Management -->
+            <section id="manage-halls" class="dash-section">
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2rem;">
+                    <h2 class="section-title" style="margin-bottom: 0;">Hall & Booking Management</h2>
+                    <button class="btn btn-primary">Add New Booking</button>
+                </div>
+                
+                <div style="display: grid; grid-template-columns: 2fr 1fr; gap: 2rem;">
+                    <!-- Central Booking Calendar (Mock) -->
+                    <div class="stat-card">
+                        <h3 style="margin-bottom: 1rem;">Master Booking Calendar</h3>
+                        <div class="mock-calendar" style="grid-template-columns: repeat(7, 1fr); gap: 2px;">
+                            <div class="cal-day">M</div><div class="cal-day">T</div><div class="cal-day">W</div><div class="cal-day">T</div><div class="cal-day">F</div><div class="cal-day">S</div><div class="cal-day">S</div>
+                            <!-- Mock days with multiple colors for different halls -->
+                            <div class="cal-day"></div><div class="cal-day">1</div><div class="cal-day booked" style="border-bottom: 3px solid var(--primary-color)">2</div><div class="cal-day booked">3</div><div class="cal-day booked" style="border-bottom: 3px solid #3b82f6">4</div><div class="cal-day booked" style="border-bottom: 3px solid var(--primary-color)">5</div><div class="cal-day">6</div>
+                            <div class="cal-day booked" style="border-bottom: 3px solid #8b5cf6">7</div><div class="cal-day">8</div><div class="cal-day">9</div><div class="cal-day booked" style="border-bottom: 3px solid #3b82f6">10</div><div class="cal-day">11</div><div class="cal-day booked">12</div><div class="cal-day booked" style="border-bottom: 3px solid var(--primary-color)">13</div>
+                            <div class="cal-day">14</div><div class="cal-day booked" style="background: rgba(202, 138, 4, 0.2); color: #ca8a04;">15</div><div class="cal-day">16</div><div class="cal-day">17</div><div class="cal-day">18</div><div class="cal-day booked">19</div><div class="cal-day booked">20</div>
+                        </div>
+                        <p style="font-size: 0.8rem; margin-top: 1rem; color: var(--text-secondary);">Colors denote different halls. Yellow denotes pending approvals.</p>
+                    </div>
+
+                    <!-- Hall Directory -->
+                    <div>
+                        <h3 style="margin-bottom: 1rem;">Hall Directory</h3>
+                        <ul style="list-style: none; padding: 0;">
+                            <li style="padding: 1rem; border: 1px solid var(--border-color); border-radius: 8px; margin-bottom: 1rem; background: var(--surface-color);">
+                                <strong style="color: var(--primary-color)">Grand Ballroom</strong>
+                                <p style="font-size: 0.85rem; color: var(--text-secondary); margin-top: 5px;">Capacity: 1000 | Status: <span style="color: #16a34a">Active</span></p>
+                            </li>
+                            <li style="padding: 1rem; border: 1px solid var(--border-color); border-radius: 8px; margin-bottom: 1rem; background: var(--surface-color);">
+                                <strong style="color: #3b82f6">Crystal Lounge</strong>
+                                <p style="font-size: 0.85rem; color: var(--text-secondary); margin-top: 5px;">Capacity: 500 | Status: <span style="color: #16a34a">Active</span></p>
+                            </li>
+                            <li style="padding: 1rem; border: 1px solid var(--border-color); border-radius: 8px; margin-bottom: 1rem; background: var(--surface-color);">
+                                <strong style="color: #8b5cf6">Intimate Garden</strong>
+                                <p style="font-size: 0.85rem; color: var(--text-secondary); margin-top: 5px;">Capacity: 150 | Status: <span style="color: #ca8a04">Maintenance</span></p>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Section 3: Customer & Event Management -->
+            <section id="manage-customers" class="dash-section">
+                <h2 class="section-title">Customer & Event Management</h2>
+                <div style="overflow-x: auto;">
+                    <table class="dash-table">
+                        <thead>
+                            <tr>
+                                <th>Client Name</th>
+                                <th>Event Type</th>
+                                <th>Date</th>
+                                <th>Hall</th>
+                                <th>Coordinator</th>
+                                <th>Status</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Sarah Smith</td>
+                                <td>Wedding Reception</td>
+                                <td>Oct 15, 2026</td>
+                                <td>Grand Ballroom</td>
+                                <td>Jessica M.</td>
+                                <td><span class="status-badge status-confirmed">Confirmed</span></td>
+                                <td><a href="#" style="color: var(--primary-color)">Manage</a></td>
+                            </tr>
+                            <tr>
+                                <td>Acme Corp</td>
+                                <td>Corporate Gala</td>
+                                <td>Oct 20, 2026</td>
+                                <td>Crystal Lounge</td>
+                                <td>David L.</td>
+                                <td><span class="status-badge status-pending">Pending Approval</span></td>
+                                <td><a href="#" style="color: var(--primary-color)">Review</a></td>
+                            </tr>
+                            <tr>
+                                <td>John Doe</td>
+                                <td>Birthday Party</td>
+                                <td>Oct 25, 2026</td>
+                                <td>Intimate Garden</td>
+                                <td>Unassigned</td>
+                                <td><span class="status-badge status-pending">Requires Staff</span></td>
+                                <td><a href="#" style="color: var(--primary-color)">Assign</a></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+            <!-- Section 4: Payments & Services -->
+            <section id="payments-services" class="dash-section">
+                <h2 class="section-title">Payments & Vendors</h2>
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem;">
+                    
+                    <div class="stat-card">
+                        <h3 style="margin-bottom: 1rem;">Recent Transactions</h3>
+                        <ul style="list-style: none; padding: 0;">
+                            <li style="display: flex; justify-content: space-between; padding: 1rem 0; border-bottom: 1px solid var(--border-color);">
+                                <div>
+                                    <strong>INV-0091 (Sarah Smith)</strong>
+                                    <div style="font-size: 0.85rem; color: var(--text-secondary);">Advance Deposit</div>
+                                </div>
+                                <div style="text-align: right;">
+                                    <span style="color: #16a34a; font-weight: bold;">+$4,500</span>
+                                    <div style="font-size: 0.85rem; color: var(--text-secondary);">Today</div>
+                                </div>
+                            </li>
+                            <li style="display: flex; justify-content: space-between; padding: 1rem 0; border-bottom: 1px solid var(--border-color);">
+                                <div>
+                                    <strong>Vendor Payment (Epicure Catering)</strong>
+                                    <div style="font-size: 0.85rem; color: var(--text-secondary);">Catering Services - Oct</div>
+                                </div>
+                                <div style="text-align: right;">
+                                    <span style="color: #dc2626; font-weight: bold;">-$12,000</span>
+                                    <div style="font-size: 0.85rem; color: var(--text-secondary);">Yesterday</div>
+                                </div>
+                            </li>
+                        </ul>
+                        <button class="btn btn-outline" style="margin-top: 1rem; width: 100%;">View All Transactions</button>
+                    </div>
+
+                    <div class="stat-card">
+                        <h3 style="margin-bottom: 1rem;">Active Vendor Partners</h3>
+                        <div style="display: flex; align-items: center; justify-content: space-between; padding: 0.5rem 0; border-bottom: 1px solid var(--border-color);">
+                            <span>Epicure Catering (Premium)</span>
+                            <span class="status-badge status-confirmed">Active</span>
+                        </div>
+                        <div style="display: flex; align-items: center; justify-content: space-between; padding: 0.5rem 0; border-bottom: 1px solid var(--border-color);">
+                            <span>Royal Floral & Decor</span>
+                            <span class="status-badge status-confirmed">Active</span>
+                        </div>
+                        <div style="display: flex; align-items: center; justify-content: space-between; padding: 0.5rem 0; border-bottom: 1px solid var(--border-color);">
+                            <span>Elite Sounds DJ</span>
+                            <span class="status-badge status-pending">Contract Renewal</span>
+                        </div>
+                        <button class="btn btn-outline" style="margin-top: 1.5rem; width: 100%;">Manage Vendors</button>
+                    </div>
+
+                </div>
+            </section>
+
+            <!-- Section 5: Reports & Analytics -->
+            <section id="reports" class="dash-section">
+                <h2 class="section-title">Reports & Analytics</h2>
+                <div class="stat-card">
+                    <h3 style="margin-bottom: 1rem;">Revenue over Time (Mock Chart)</h3>
+                    <!-- Mock Bar Chart -->
+                    <div style="display: flex; align-items: flex-end; gap: 10px; height: 200px; padding-top: 20px; border-bottom: 2px solid var(--border-color); border-left: 2px solid var(--border-color); padding-left: 10px;">
+                        <div style="width: 100%; background: rgba(212, 175, 55, 0.4); height: 40%; position: relative;"><span style="position: absolute; bottom: -25px; left: 50%; transform: translateX(-50%); font-size: 0.8rem;">Jan</span></div>
+                        <div style="width: 100%; background: rgba(212, 175, 55, 0.5); height: 50%; position: relative;"><span style="position: absolute; bottom: -25px; left: 50%; transform: translateX(-50%); font-size: 0.8rem;">Feb</span></div>
+                        <div style="width: 100%; background: rgba(212, 175, 55, 0.6); height: 80%; position: relative;"><span style="position: absolute; bottom: -25px; left: 50%; transform: translateX(-50%); font-size: 0.8rem;">Mar</span></div>
+                        <div style="width: 100%; background: rgba(212, 175, 55, 0.4); height: 45%; position: relative;"><span style="position: absolute; bottom: -25px; left: 50%; transform: translateX(-50%); font-size: 0.8rem;">Apr</span></div>
+                        <div style="width: 100%; background: rgba(212, 175, 55, 0.8); height: 95%; position: relative;"><span style="position: absolute; bottom: -25px; left: 50%; transform: translateX(-50%); font-size: 0.8rem;">May</span></div>
+                        <div style="width: 100%; background: var(--primary-color); height: 75%; position: relative;"><span style="position: absolute; bottom: -25px; left: 50%; transform: translateX(-50%); font-size: 0.8rem;">Jun</span></div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Section 6: Settings -->
+            <section id="settings" class="dash-section">
+                <h2 class="section-title">System Settings</h2>
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem;">
+                    <div class="stat-card">
+                        <h3 style="margin-bottom: 1rem;">Staff Management</h3>
+                        <p style="font-size: 0.9rem; color: var(--text-secondary); margin-bottom: 1rem;">Manage event coordinators, admins, and support staff access levels.</p>
+                        <button class="btn btn-outline" style="width: 100%;">Configure Staff Accounts</button>
+                    </div>
+                    <div class="stat-card">
+                        <h3 style="margin-bottom: 1rem;">Business Configuration</h3>
+                        <p style="font-size: 0.9rem; color: var(--text-secondary); margin-bottom: 1rem;">Update taxes, cancellation policies, and automated email templates.</p>
+                        <button class="btn btn-outline" style="width: 100%;">Open Settings</button>
+                    </div>
+                </div>
+            </section>
+
+        </main>
+    </div>
+
+    <!-- Floating Quick Actions (Admin) -->
+    <div class="fab-container">
+        <div class="fab-menu">
+            <a href="#manage-halls" class="fab-item">Approve Booking</a>
+            <a href="#payments-services" class="fab-item">Generate Invoice</a>
+            <a href="#manage-customers" class="fab-item">Assign Staff</a>
+            <a href="#" class="fab-item" id="fab-back-to-top"><svg style="margin-right:0.5rem" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="19" x2="12" y2="5"></line><polyline points="5 12 12 5 19 12"></polyline></svg> Back to Top</a>
+        </div>
+        <button class="fab-btn" id="fab-main">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon></svg>
+        </button>
+    </div>
+
+    <!-- Scripts -->
+    <script src="js/script.js"></script>
+    <script src="js/dashboard.js"></script>
+</body>
+</html>

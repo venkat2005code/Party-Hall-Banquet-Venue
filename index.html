@@ -71,12 +71,13 @@
                 <button id="theme-toggle" class="btn-icon" aria-label="Toggle Theme">
                     <!-- Icon handled by JS -->
                 </button>
+                <a href="login.html" class="btn btn-outline" style="margin-left: 1rem;">Book Now</a>
             </div>
         </div>
     </header>
 
-    <!-- SECTION 1: Hero -->
-    <section class="hero" style="background-image: url('hero.jpg'); background-size: cover; background-position: center; position: relative;">
+    <!-- SECTION 1: Hero (Understand) -->
+    <section class="hero" id="hero" style="background-image: url('hero.jpg'); background-size: cover; background-position: center; position: relative;">
         <img src="hero.jpg" class="hero-bg" alt="Grandeur Hero Background" onerror="this.src='../hero.jpg'">
         <div class="hero-overlay"></div>
         <div class="hero-content">
@@ -84,34 +85,14 @@
             <h1>Timeless Elegance For Your Perfect Moments</h1>
             <p>Experience unmatched luxury and bespoke services at Grandeur. The premier destination for weddings, corporate galas, and milestone celebrations.</p>
             <div class="hero-actions">
-                <button class="btn btn-primary" onclick="location.href='packages.html'">View Packages</button>
-                <button class="btn btn-outline" onclick="location.href='gallery.html'">Explore Gallery</button>
+                <button class="btn btn-primary" onclick="location.href='login.html'">Book Now</button>
+                <button class="btn btn-outline" onclick="document.getElementById('explore').scrollIntoView({behavior: 'smooth'})">Explore Venue</button>
             </div>
         </div>
     </section>
 
-    <!-- SECTION 2: Our Heritage (Split Layout) -->
-    <section class="content-section section-alt-bg">
-        <div class="split-layout">
-            <div class="split-text">
-                <span class="badge">Our Heritage</span>
-                <h2 style="font-family: var(--font-heading); font-size: 2.5rem; margin: 1rem 0; color: var(--primary-color);">A Legacy of Luxury</h2>
-                <p style="color: var(--text-secondary); margin-bottom: 1.5rem; line-height: 1.8;">Since 1998, Grandeur has been the backdrop to thousands of unforgettable stories. Our historic architecture seamlessly blends with modern amenities to create a truly magical atmosphere.</p>
-                <ul class="feature-list-icon">
-                    <li><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg> Over 25 Years of Excellence</li>
-                    <li><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg> Award-Winning Culinary Team</li>
-                    <li><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg> Exclusive Historic Location</li>
-                </ul>
-                <a href="about.html" class="btn btn-outline" style="margin-top: 1rem;">Read Our Story</a>
-            </div>
-            <div class="split-img-wrapper">
-                <img src="sec.jpg" alt="A Legacy of Luxury" onerror="this.src='../sec.jpg'">
-            </div>
-        </div>
-    </section>
-
-    <!-- SECTION 3: Premium Services Overview -->
-    <section class="content-section">
+    <!-- SECTION 2: Premium Services Overview (Explore) -->
+    <section class="content-section" id="explore">
         <div style="text-align: center; margin-bottom: 3rem;">
             <span class="badge">What We Offer</span>
             <h2 style="font-family: var(--font-heading); font-size: 2.5rem; margin-top: 1rem; color: var(--text-primary);">Exquisite Services</h2>
@@ -123,7 +104,6 @@
                 </div>
                 <h3 class="card-title">Weddings</h3>
                 <p class="card-desc">From intimate ceremonies to grand receptions, we bring your dream wedding to life with flawless execution.</p>
-                <a href="services.html" style="color: var(--primary-color); font-weight: 600; text-decoration: none;">Discover More →</a>
             </div>
             <div class="card">
                 <div class="card-icon" style="color: var(--primary-color);">
@@ -131,7 +111,6 @@
                 </div>
                 <h3 class="card-title">Corporate Galas</h3>
                 <p class="card-desc">Impress your clients and team with our state-of-the-art facilities and premium catering options.</p>
-                <a href="services.html" style="color: var(--primary-color); font-weight: 600; text-decoration: none;">Discover More →</a>
             </div>
             <div class="card">
                 <div class="card-icon" style="color: var(--primary-color);">
@@ -139,12 +118,14 @@
                 </div>
                 <h3 class="card-title">Private Parties</h3>
                 <p class="card-desc">Celebrate birthdays, anniversaries, and milestones in an atmosphere of pure sophistication.</p>
-                <a href="services.html" style="color: var(--primary-color); font-weight: 600; text-decoration: none;">Discover More →</a>
             </div>
+        </div>
+        <div style="text-align: center; margin-top: 3rem;">
+            <a href="services.html" class="btn btn-outline">View All Services</a>
         </div>
     </section>
 
-    <!-- SECTION 4: Featured Halls -->
+    <!-- SECTION 3: Featured Halls (Explore) -->
     <section class="content-section section-alt-bg">
         <div style="text-align: center; margin-bottom: 3rem;">
             <span class="badge">Our Venues</span>
@@ -176,10 +157,33 @@
                 </div>
             </div>
         </div>
+        <div style="text-align: center; margin-top: 3rem;">
+            <a href="gallery.html" class="btn btn-outline">Explore Our Gallery</a>
+        </div>
     </section>
 
-    <!-- SECTION 5: Client Testimonials -->
+    <!-- SECTION 4: Our Heritage (Trust) -->
     <section class="content-section">
+        <div class="split-layout">
+            <div class="split-text">
+                <span class="badge">Our Heritage</span>
+                <h2 style="font-family: var(--font-heading); font-size: 2.5rem; margin: 1rem 0; color: var(--primary-color);">A Legacy of Luxury</h2>
+                <p style="color: var(--text-secondary); margin-bottom: 1.5rem; line-height: 1.8;">Since 1998, Grandeur has been the backdrop to thousands of unforgettable stories. Our historic architecture seamlessly blends with modern amenities to create a truly magical atmosphere.</p>
+                <ul class="feature-list-icon">
+                    <li><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg> Over 25 Years of Excellence</li>
+                    <li><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg> Award-Winning Culinary Team</li>
+                    <li><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg> Exclusive Historic Location</li>
+                </ul>
+                <a href="about.html" class="btn btn-outline" style="margin-top: 1rem;">Read Our Story</a>
+            </div>
+            <div class="split-img-wrapper">
+                <img src="sec.jpg" alt="A Legacy of Luxury" onerror="this.src='../sec.jpg'">
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 5: Client Testimonials (Trust) -->
+    <section class="content-section section-alt-bg">
         <div style="text-align: center; margin-bottom: 3rem;">
             <span class="badge">Testimonials</span>
             <h2 style="font-family: var(--font-heading); font-size: 2.5rem; margin-top: 1rem; color: var(--text-primary);">Words From Our Guests</h2>
@@ -210,11 +214,44 @@
         </div>
     </section>
 
-    <!-- SECTION 6: Call To Action -->
+    <!-- SECTION 6: Packages (Decide) -->
+    <section class="content-section">
+        <div style="text-align: center; margin-bottom: 3rem;">
+            <span class="badge">Curated Packages</span>
+            <h2 style="font-family: var(--font-heading); font-size: 2.5rem; margin-top: 1rem; color: var(--text-primary);">Find Your Perfect Fit</h2>
+            <p style="color: var(--text-secondary); max-width: 600px; margin: 1rem auto 0;">We offer tiered packages designed to suit different scales and styles of celebrations.</p>
+        </div>
+        <div class="cards-grid">
+            <div class="card" style="text-align: center; padding: 2rem;">
+                <h3 style="color: var(--text-primary); font-family: var(--font-heading); font-size: 1.8rem; margin-bottom: 0.5rem;">Classic</h3>
+                <div style="font-size: 1.5rem; font-weight: bold; color: var(--primary-color); margin-bottom: 1rem;">From $5,000</div>
+                <p style="color: var(--text-secondary); margin-bottom: 1.5rem;">Perfect for intimate gatherings.</p>
+            </div>
+            <div class="card" style="text-align: center; padding: 2rem; border-color: var(--primary-color); position: relative;">
+                <div style="position: absolute; top: -12px; left: 50%; transform: translateX(-50%); background: var(--primary-color); color: white; padding: 4px 12px; border-radius: 12px; font-size: 0.8rem; font-weight: bold;">Most Popular</div>
+                <h3 style="color: var(--text-primary); font-family: var(--font-heading); font-size: 1.8rem; margin-bottom: 0.5rem;">Premium</h3>
+                <div style="font-size: 1.5rem; font-weight: bold; color: var(--primary-color); margin-bottom: 1rem;">From $12,500</div>
+                <p style="color: var(--text-secondary); margin-bottom: 1.5rem;">A beautiful balance of luxury and value.</p>
+            </div>
+            <div class="card" style="text-align: center; padding: 2rem;">
+                <h3 style="color: var(--text-primary); font-family: var(--font-heading); font-size: 1.8rem; margin-bottom: 0.5rem;">Luxury</h3>
+                <div style="font-size: 1.5rem; font-weight: bold; color: var(--primary-color); margin-bottom: 1rem;">From $25,000</div>
+                <p style="color: var(--text-secondary); margin-bottom: 1.5rem;">The ultimate all-inclusive VIP experience.</p>
+            </div>
+        </div>
+        <div style="text-align: center; margin-top: 3rem;">
+            <a href="packages.html" class="btn btn-outline">View Full Pricing Details</a>
+        </div>
+    </section>
+
+    <!-- SECTION 7: Call To Action (Act) -->
     <section class="content-section section-alt-bg" style="text-align: center; padding: 6rem 2rem;">
         <h2 style="font-family: var(--font-heading); font-size: 3rem; color: var(--primary-color); margin-bottom: 1.5rem;">Ready to Begin Planning?</h2>
         <p style="color: var(--text-secondary); max-width: 600px; margin: 0 auto 2rem; font-size: 1.1rem; line-height: 1.6;">Contact our event specialists today to schedule a private tour and discuss how we can bring your vision to life.</p>
-        <button class="btn btn-primary" onclick="location.href='contact.html'" style="padding: 1rem 3rem; font-size: 1.1rem;">Inquire Now</button>
+        <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+            <button class="btn btn-primary" onclick="location.href='contact.html'" style="padding: 1rem 3rem; font-size: 1.1rem;">Inquire Now</button>
+            <button class="btn btn-outline" onclick="location.href='register.html'" style="padding: 1rem 3rem; font-size: 1.1rem;">Create Account</button>
+        </div>
     </section>
 
     <!-- Footer -->

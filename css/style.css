@@ -208,15 +208,15 @@ html[dir="rtl"] .nav-menu {
 }
 
 .btn-icon {
-  background: none;
-  border: none;
+  background: transparent;
+  border: 1px solid var(--border-color);
   color: var(--text-primary);
   font-size: 1.25rem;
   cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: color var(--transition-smooth);
+  transition: var(--transition-smooth);
   width: 40px;
   height: 40px;
   border-radius: 50%;
@@ -224,6 +224,7 @@ html[dir="rtl"] .nav-menu {
 
 .btn-icon:hover {
   color: var(--primary-color);
+  border-color: var(--primary-color);
   background-color: rgba(212, 175, 55, 0.1);
 }
 
@@ -231,18 +232,23 @@ html[dir="rtl"] .nav-menu {
   font-family: var(--font-body);
   font-weight: 600;
   font-size: 0.85rem;
-  padding: 0.5rem 1rem;
+  width: 40px;
+  height: 40px;
   border: 1px solid var(--border-color);
-  border-radius: 20px;
+  border-radius: 50%;
   background-color: transparent;
   color: var(--text-primary);
   cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   transition: var(--transition-smooth);
 }
 
 .toggle-btn:hover {
   border-color: var(--primary-color);
   color: var(--primary-color);
+  background-color: rgba(212, 175, 55, 0.1);
 }
 
 /* Buttons */
@@ -508,7 +514,7 @@ html[dir="rtl"] .nav-menu {
 
 /* Dashboard Layout */
 .dashboard-layout {
-  display: flex;
+  display: block;
   min-height: 100vh;
   padding-top: 80px; /* Offset for header */
 }
@@ -521,6 +527,7 @@ html[dir="rtl"] .nav-menu {
   position: fixed;
   height: calc(100vh - 80px);
   overflow-y: auto;
+  overflow-x: hidden;
 }
 
 html[dir="rtl"] .sidebar {
@@ -531,6 +538,7 @@ html[dir="rtl"] .sidebar {
 .sidebar-menu {
   display: flex;
   flex-direction: column;
+  height: 100%;
 }
 
 .sidebar-item {

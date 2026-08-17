@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register | Grandeur</title>
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/auth.css">
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <div class="auth-layout">
+        <!-- Image Side (Hidden on Mobile) -->
+        <div class="auth-image" style="background-image: url('hero.jpg');">
+            <div class="auth-image-overlay">
+                <h2>Join Grandeur</h2>
+                <p>Create an account to start planning your perfect event with our world-class venue and services.</p>
+            </div>
+        </div>
+
+        <!-- Content Side -->
+        <div class="auth-content">
+            <!-- Header Utilities (Toggles) -->
+            <div class="auth-header" style="justify-content: flex-end;">
+                <div class="header-utils">
+                    <button id="dir-toggle" class="toggle-btn" aria-label="Toggle Direction">LTR</button>
+                    <button id="theme-toggle" class="btn-icon" aria-label="Toggle Theme">
+                        <!-- Icon handled by JS -->
+                    </button>
+                </div>
+            </div>
+
+            <!-- Form Container -->
+            <div class="auth-form-wrapper">
+                <div class="auth-form-container">
+                    <a href="index.html" class="logo" style="display: flex; align-items: center; justify-content: center; gap: 0.5rem; text-decoration: none; color: var(--text-primary); font-family: var(--font-heading); font-weight: 600; font-size: 2rem; margin-bottom: 1.5rem;">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="var(--primary-color)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M2 22h20M4 22V10M8 22V10M12 22V10M16 22V10M20 22V10M2 10h20M12 2L2 9h20z"/>
+                        </svg>
+                        Grandeur
+                    </a>
+                    <h1 class="auth-title">Create Account</h1>
+                    <p class="auth-subtitle">Fill in the details below to register.</p>
+
+                    <form action="dashboard.html" method="GET">
+                        <div class="form-group">
+                            <label for="fullname">Full Name</label>
+                            <input type="text" id="fullname" placeholder="Sarah Smith" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email Address</label>
+                            <input type="email" id="email" placeholder="sarah@example.com" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="password">Password</label>
+                            <input type="password" id="password" placeholder="••••••••" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="confirm-password">Confirm Password</label>
+                            <input type="password" id="confirm-password" placeholder="••••••••" required>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary" style="width: 100%; margin-top: 1rem;">Register</button>
+                    </form>
+
+                    <div class="auth-footer">
+                        Already have an account? <a href="login.html" class="auth-link">Sign In</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="js/script.js"></script>
+</body>
+</html>

@@ -72,7 +72,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const navContainer = document.querySelector('.nav-container');
     const navMenu = document.querySelector('.nav-menu');
 
-    if (navContainer && navMenu) {
+    if (navContainer && (navMenu || document.querySelector('.sidebar'))) {
         // Ensure hamburger button exists
         let hamburgerBtn = navContainer.querySelector('.hamburger-btn');
         if (!hamburgerBtn) {
@@ -80,6 +80,7 @@ document.addEventListener('DOMContentLoaded', () => {
             hamburgerBtn.className = 'hamburger-btn';
             hamburgerBtn.setAttribute('aria-label', 'Toggle Navigation Menu');
             hamburgerBtn.innerHTML = '<span></span><span></span><span></span>';
+            // Insert before header-utils so it appears in right order on some layouts, or just append
             navContainer.appendChild(hamburgerBtn);
         }
 
@@ -130,8 +131,15 @@ document.addEventListener('DOMContentLoaded', () => {
         hamburgerBtn.addEventListener('click', (e) => {
             e.stopPropagation();
             hamburgerBtn.classList.toggle('active');
-            navMenu.classList.toggle('active');
-            document.body.style.overflow = navMenu.classList.contains('active') ? 'hidden' : '';
+            if (navMenu) {
+                navMenu.classList.toggle('active');
+                document.body.style.overflow = navMenu.classList.contains('active') ? 'hidden' : '';
+            }
+            const sidebar = document.querySelector('.sidebar');
+            if (sidebar) {
+                sidebar.classList.toggle('active');
+                document.body.style.overflow = sidebar.classList.contains('active') ? 'hidden' : '';
+            }
         });
 
         // Click to expand accordion for Home and Dashboards on mobile

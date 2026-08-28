@@ -312,10 +312,10 @@ html[dir="rtl"] .fab-container {
   .analytics-grid {
     grid-template-columns: 1fr !important;
   }
-  /* Force side-by-side dashboard section grids into 1 column on mobile only (except mock-calendar) */
-  .dashboard-content section div[style*="grid-template-columns"]:not(.mock-calendar),
-  .dashboard-content section div[style*="flex"] {
-    grid-template-columns: 1fr !important;
+  /* Force all inline grid / flex sections to single column */
+  .dashboard-content section > div[style*="grid-template-columns"],
+  .dashboard-content section > div[style*="display: grid"] {
+    display: flex !important;
     flex-direction: column !important;
     gap: 1.25rem !important;
   }
@@ -335,6 +335,22 @@ html[dir="rtl"] .fab-container {
     align-items: stretch;
     gap: 1rem;
   }
+  /* Table fixes for mobile */
+  .dash-table th,
+  .dash-table td {
+    padding: 0.6rem 0.5rem;
+    font-size: 0.85rem;
+  }
+  .status-badge {
+    padding: 0.2rem 0.4rem;
+    font-size: 0.75rem;
+  }
+  .dash-search input {
+    width: 100% !important;
+  }
+  .dash-search input:focus {
+    width: 100% !important;
+  }
 }
 
 @media (max-width: 360px) {
@@ -353,5 +369,21 @@ html[dir="rtl"] .fab-container {
   }
   .cal-day {
     font-size: 0.75rem;
+  }
+  /* Extra-tight table for 360px */
+  .dash-table th,
+  .dash-table td {
+    padding: 0.45rem 0.35rem;
+    font-size: 0.78rem;
+    white-space: nowrap;
+  }
+  .dash-section {
+    padding: 2rem 0;
+  }
+  .section-title {
+    font-size: 1.5rem;
+  }
+  .dashboard-content {
+    padding: 0.75rem !important;
   }
 }

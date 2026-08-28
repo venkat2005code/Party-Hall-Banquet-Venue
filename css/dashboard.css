@@ -99,6 +99,7 @@ html[dir="rtl"] .sidebar.collapsed ~ .dashboard-content {
 }
 .dash-section:last-of-type {
   border-bottom: none;
+  min-height: auto;
 }
 
 .section-title {
@@ -174,6 +175,12 @@ html[dir="rtl"] .sidebar.collapsed ~ .dashboard-content {
 }
 
 /* Tables */
+.table-responsive {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  margin-bottom: 1rem;
+}
+
 .dash-table {
   width: 100%;
   border-collapse: collapse;

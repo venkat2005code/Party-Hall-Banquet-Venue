@@ -20,6 +20,9 @@
 .split-layout.reverse {
     direction: rtl; /* For flipping visually without changing DOM order if needed, but flex order is better */
 }
+.split-layout.reverse > * {
+    direction: ltr;
+}
 @media (max-width: 768px) {
     .split-layout { grid-template-columns: 1fr; }
 }
@@ -54,10 +57,21 @@
     align-items: center;
     gap: 1rem;
 }
-.testimonial-author img {
+.testimonial-author img,
+.testimonial-author .profile-icon {
     width: 50px;
     height: 50px;
     border-radius: 50%;
+}
+.testimonial-author .profile-icon {
+    background-color: var(--primary-color);
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    font-weight: 500;
+    flex-shrink: 0;
 }
 .testimonial-quote-icon {
     position: absolute;

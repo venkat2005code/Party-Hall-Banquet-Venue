@@ -268,36 +268,38 @@
             <!-- Section 3: My Bookings -->
             <section id="my-bookings" class="dash-section">
                 <h2 class="section-title">My Bookings</h2>
-                <table class="dash-table">
-                    <thead>
-                        <tr>
-                            <th>Ref ID</th>
-                            <th>Event Type</th>
-                            <th>Date</th>
-                            <th>Hall</th>
-                            <th>Guests</th>
-                            <th>Status</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>GR-2026-88</td>
-                            <td>Wedding Reception</td>
-                            <td>Oct 15, 2026</td>
-                            <td>Grand Ballroom</td>
-                            <td>350</td>
-                            <td><span class="status-badge status-confirmed">Confirmed</span></td>
-                        </tr>
-                        <tr>
-                            <td>GR-2025-42</td>
-                            <td>Engagement Party</td>
-                            <td>Dec 10, 2025</td>
-                            <td>Crystal Lounge</td>
-                            <td>120</td>
-                            <td><span class="status-badge status-confirmed">Completed</span></td>
-                        </tr>
-                    </tbody>
-                </table>
+                <div class="table-responsive">
+                    <table class="dash-table">
+                        <thead>
+                            <tr>
+                                <th>Ref ID</th>
+                                <th>Event Type</th>
+                                <th>Date</th>
+                                <th>Hall</th>
+                                <th>Guests</th>
+                                <th>Status</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>GR-2026-88</td>
+                                <td>Wedding Reception</td>
+                                <td>Oct 15, 2026</td>
+                                <td>Grand Ballroom</td>
+                                <td>350</td>
+                                <td><span class="status-badge status-confirmed">Confirmed</span></td>
+                            </tr>
+                            <tr>
+                                <td>GR-2025-42</td>
+                                <td>Engagement Party</td>
+                                <td>Dec 10, 2025</td>
+                                <td>Crystal Lounge</td>
+                                <td>120</td>
+                                <td><span class="status-badge status-confirmed">Completed</span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
             </section>
 
             <!-- Section 4: Payments & Invoices -->
@@ -319,36 +321,46 @@
                 </div>
 
                 <h3 style="margin-top: 2rem; margin-bottom: 1rem;">Invoice History</h3>
-                <table class="dash-table">
-                    <thead>
-                        <tr>
-                            <th>Invoice #</th>
-                            <th>Date</th>
-                            <th>Description</th>
-                            <th>Amount</th>
-                            <th>Status</th>
-                            <th>Action</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>INV-0091</td>
-                            <td>May 15, 2026</td>
-                            <td>Advance Booking Deposit</td>
-                            <td>$4,500</td>
-                            <td><span class="status-badge status-confirmed">Paid</span></td>
-                            <td><a href="#" style="color: var(--primary-color)">Download PDF</a></td>
-                        </tr>
-                        <tr>
-                            <td>INV-0092</td>
-                            <td>Sep 15, 2026</td>
-                            <td>Second Installment</td>
-                            <td>$2,500</td>
-                            <td><span class="status-badge status-pending">Pending</span></td>
-                            <td><a href="#" style="color: var(--primary-color)">Pay Now</a></td>
-                        </tr>
-                    </tbody>
-                </table>
+                <div class="table-responsive">
+                    <table class="dash-table">
+                        <thead>
+                            <tr>
+                                <th>Invoice #</th>
+                                <th>Date</th>
+                                <th>Description</th>
+                                <th>Amount</th>
+                                <th>Status</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>INV-0091</td>
+                                <td>May 15, 2026</td>
+                                <td>Advance Booking Deposit</td>
+                                <td>$4,500</td>
+                                <td><span class="status-badge status-confirmed">Paid</span></td>
+                                <td><a href="#" style="color: var(--primary-color)">Download PDF</a></td>
+                            </tr>
+                            <tr>
+                                <td>INV-0092</td>
+                                <td>Sep 15, 2026</td>
+                                <td>Second Installment</td>
+                                <td>$4,500</td>
+                                <td><span class="status-badge status-pending">Pending</span></td>
+                                <td><a href="#" style="color: var(--primary-color)">Pay Now</a></td>
+                            </tr>
+                            <tr>
+                                <td>INV-0093</td>
+                                <td>Oct 10, 2026</td>
+                                <td>Final Balance & Extras</td>
+                                <td>$3,000</td>
+                                <td><span class="status-badge status-pending">Pending</span></td>
+                                <td><a href="#" style="color: var(--primary-color)">Pay Now</a></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
             </section>
 
             <!-- Section 5: Event Planning -->
@@ -396,7 +408,7 @@
                         <p><strong>Name:</strong> Sarah Smith</p>
                         <p><strong>Email:</strong> sarah.smith@example.com</p>
                         <p><strong>Phone:</strong> +1 (555) 987-6543</p>
-                        <button class="btn btn-outline" style="margin-top: 1rem;">Edit Profile</button>
+                        <button class="btn btn-outline" style="margin-top: auto;">Edit Profile</button>
                     </div>
 
                     <div class="stat-card">
@@ -406,7 +418,7 @@
                             <strong>Your booking advance payment was successful.</strong>
                             <p style="font-size: 0.8rem; color: var(--text-secondary);">May 15, 2026 - 10:45 AM</p>
                         </div>
-                        <div style="border-left: 3px solid #ccc; padding-left: 1rem; margin-bottom: 1rem;">
+                        <div style="border-left: 3px solid #ccc; padding-left: 1rem; margin-bottom: 0;">
                             <strong>Coordinator Jessica has reviewed your catering menu.</strong>
                             <p style="font-size: 0.8rem; color: var(--text-secondary);">May 12, 2026 - 2:30 PM</p>
                         </div>
